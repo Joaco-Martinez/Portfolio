@@ -69,7 +69,6 @@ export default function Projects({ theme, isHacker, projects }: Props) {
                 {/* En vez de <a href=...> abrimos el modal */}
                 <button
                   type="button"
-                  onClick={() => openModal(p as ProjectForModal)}
                   className="block h-full text-left"
                   aria-label={`Abrir detalles de ${title}`}
                 >
