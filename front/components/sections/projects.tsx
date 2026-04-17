@@ -89,7 +89,7 @@ const projects: Project[] = [
   },
   {
     id: "cerro-barberia",
-    title: "Cerro Barbería D&apos;Autor",
+    title: "Cerro Barbería D´Autor",
     subtitle: "Plataforma de Gestión de Barbería",
     description: "Plataforma digital full stack para la gestión integral de una barbería moderna, enfocada en optimizar la organización de turnos.",
     problem: "Los negocios de servicios necesitan herramientas para gestionar turnos, profesionales y clientes de forma eficiente.",
