@@ -72,12 +72,12 @@ export function Hero() {
                 Contactar
               </Link>
             </Button>
-            <Button asChild variant="ghost" size="lg">
+            {/* <Button asChild variant="ghost" size="lg">
               <a href="/cv-joaquin-martinez.pdf" download>
                 <FileText className="mr-2 h-4 w-4" />
                 Descargar CV
               </a>
-            </Button>
+            </Button> */}
           </motion.div>
 
           {/* Social Links */}
