@@ -9,6 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 const helmet_1 = __importDefault(require("helmet"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const comments_routes_1 = __importDefault(require("./routes/comments.routes"));
+const content_routes_1 = __importDefault(require("./routes/content.routes"));
 const error_1 = require("./middleware/error");
 function createApp() {
     const app = (0, express_1.default)();
@@ -19,6 +20,7 @@ function createApp() {
     app.use((0, cors_1.default)({ origin: true, credentials: true }));
     app.get("/health", (_req, res) => res.json({ ok: true }));
     app.use("/comments", comments_routes_1.default);
+    app.use("/content", content_routes_1.default);
     app.use(error_1.errorHandler);
     return app;
 }
