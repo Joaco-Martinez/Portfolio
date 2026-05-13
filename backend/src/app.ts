@@ -3,6 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import commentsRouter from "./routes/comments.routes";
+import contentRouter from "./routes/content.routes";
 import { errorHandler } from "./middleware/error";
 
 export function createApp() {
@@ -17,6 +18,7 @@ export function createApp() {
   app.get("/health", (_req, res) => res.json({ ok: true }));
 
   app.use("/comments", commentsRouter);
+  app.use("/content", contentRouter);
 
   app.use(errorHandler);
   return app;

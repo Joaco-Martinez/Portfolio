@@ -14,3 +14,32 @@ model Comment {
   role      String?
   createdAt DateTime @default(now())
 }
+
+model Technology {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  category  String
+  level     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  slug        String   @unique
+  title       String
+  subtitle    String
+  description String
+  problem     String
+  impact      String
+  features    String[]
+  stack       String[]
+  highlights  String[]
+  imageUrl    String
+  accentColor String   @default("#0ea5e9")
+  liveUrl     String?
+  repoUrl     String?
+  featured    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
