@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowLeft, Download, FolderOpen, Play, Archive } from "lucide-react"
+import { ArrowLeft, Download, MonitorDown, PackagePlus, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-// El .zip pesa ~750 MB: no entra en el repo (límite de GitHub 100 MB) ni en Vercel,
-// así que se sirve desde un hosting externo (GitHub Releases, Drive, Mega...).
+// El .zip pesa ~210 MB: no entra en el repo (límite de GitHub 100 MB) ni en Vercel,
+// así que se sirve como asset del release "server-zombie" de GitHub.
 const DOWNLOAD_URL =
   process.env.NEXT_PUBLIC_SERVER_ZOMBIE_URL ??
-  "https://github.com/Joaco-Martinez/Portfolio/releases/download/server-zombie/Server-Zombie.zip"
+  "https://github.com/Joaco-Martinez/Portfolio/releases/download/server-zombie/Zombies.zip"
 
 export const metadata: Metadata = {
   title: "Server Zombie | Descarga",
@@ -18,23 +18,23 @@ export const metadata: Metadata = {
 const steps = [
   {
     icon: Download,
-    title: "Descargá el archivo",
-    text: "Hacé click en el botón de descarga. El archivo pesa aproximadamente 750 MB.",
+    title: "Descargá el modpack",
+    text: "Hacé click en el botón de descarga. El archivo pesa aproximadamente 210 MB. No lo descomprimas.",
   },
   {
-    icon: Archive,
-    title: "Extraé el .zip",
-    text: "Click derecho sobre “Server Zombie.zip” → “Extraer todo…” y elegí una carpeta.",
+    icon: MonitorDown,
+    title: "Instalá CurseForge",
+    text: "Si no lo tenés, descargá la app de CurseForge (curseforge.com/download/app) y elegí Minecraft.",
   },
   {
-    icon: FolderOpen,
-    title: "Abrí la carpeta",
-    text: "Entrá a la carpeta extraída. No ejecutes nada desde dentro del .zip sin extraer.",
+    icon: PackagePlus,
+    title: "Importá el perfil",
+    text: "En CurseForge: “Create Custom Profile” → “Import” → seleccioná “Zombies.zip”. Descarga Forge 1.20.1 y todos los mods automáticamente.",
   },
   {
     icon: Play,
-    title: "Ejecutá el juego",
-    text: "Abrí el ejecutable. Si Windows muestra “Windows protegió su PC”, tocá “Más información” → “Ejecutar de todas formas”.",
+    title: "Jugá",
+    text: "Tocá “Play” en el perfil “Zombies”. La primera vez tarda un poco en cargar.",
   },
 ]
 
@@ -62,13 +62,13 @@ export default function ServerZombiePage() {
         </h1>
 
         <p className="text-muted-foreground leading-relaxed mb-10">
-          Descargá el paquete y seguí los pasos de instalación de abajo.
+          Modpack de Minecraft 1.20.1 (Forge). Descargalo y seguí los pasos de instalación de abajo.
         </p>
 
         <Button asChild size="lg" className="mb-16">
           <a href={DOWNLOAD_URL} download>
             <Download className="mr-2 w-4 h-4" />
-            Descargar Server Zombie.zip
+            Descargar Zombies.zip
           </a>
         </Button>
 
